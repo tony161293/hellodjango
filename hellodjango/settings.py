@@ -5,8 +5,7 @@ import dj_database_url
 PROJECT_DIRECTORY = os.getcwd()
 
 
-DEBUG = False
-TEMPLATE_DEBUG = DEBUG
+DEBUG = TEMPLATE_DEBUG = False
 
 ADMINS = (
     # ('Tony Tom', 'tony161293@gmail.com'),
@@ -17,6 +16,8 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': dj_database_url.config()
 }
+
+ALLOWED_HOSTS = ('tonydjango.herokuapp.com')
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
