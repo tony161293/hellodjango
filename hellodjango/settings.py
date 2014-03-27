@@ -2,7 +2,7 @@
 import os
 import dj_database_url
 
-PROJECT_DIRECTORY = os.getcwd()
+PROJECT_DIRECTORY = os.path.dirname(os.path.abspath(__file__))
 
 
 DEBUG = TEMPLATE_DEBUG = False
@@ -13,10 +13,9 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
-DATABASES = {
-    'default': dj_database_url.config()
-}
+DATABASES['default'] =  dj_database_url.config()
 
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
